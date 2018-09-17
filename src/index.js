@@ -118,7 +118,7 @@ module.exports = class Seeds extends Chance {
         const asset = Object.assign({
           id: this.guid(),
           type: 'assets',
-          name: `XDAM_0000${this.pad(this.records.assets.length + 1, 5)}.jpg`,
+          name: `XDAM_${this.pad(this.records.assets.length + 1, 5)}.jpg`,
           created: this.created(),
           modified: this.modified(),
           fileType: 'JPG',
