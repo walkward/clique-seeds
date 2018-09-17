@@ -37,8 +37,6 @@ test('checking content types of each record', (assert) => {
   const seeds = new Seeds();
   seeds.init();
 
-  console.log(seeds.records.folders[0]);
-
   assert.true(seeds.records.customers.every(customer => customer.projects.every(project => project.type === 'projects')));
   assert.true(seeds.records.customers.every(customer => customer.groups.every(group => group.type === 'groups')));
   assert.true(seeds.records.customers.every(customer => customer.users.every(user => user.type === 'users')));
