@@ -1,7 +1,7 @@
 {
   "name": "clique-seeds",
   "description": "A utility for creating seed data for both the server and client.",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "author": "Walker Ward <walker.ward1@gmail.com> ()",
   "bugs": {
     "url": "https://github.com/walkward/clique-seeds/issues",
@@ -20,12 +20,10 @@
   },
   "devDependencies": {
     "ava": "^0.22.0",
-    "codecov": "^2.3.0",
     "cross-env": "^5.0.5",
     "eslint": "^4.5.0",
     "eslint-config-airbnb-base": "13.1.0",
     "eslint-plugin-import": "2.14.0",
-    "husky": "^0.14.3",
     "nyc": "^11.1.0"
   },
   "engines": {
@@ -56,7 +54,6 @@
     "lint": "eslint src/**",
     "test": "yarn run lint && yarn run test-coverage",
     "test:dev": "NODE_ENV=test ava --watch",
-    "test-coverage": "cross-env NODE_ENV=test nyc ava",
-    "coverage": "nyc report --reporter=text-lcov > coverage.lcov && codecov"
+    "test-coverage": "cross-env NODE_ENV=test nyc ava"
   }
 }
