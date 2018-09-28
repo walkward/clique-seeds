@@ -21,6 +21,8 @@
  * @namespace seeds
  */
 
+const pick = require('lodash/pick');
+const omit = require('lodash/omit');
 const { stripIndents } = require('common-tags');
 const Chance = require('chance');
 
@@ -108,6 +110,22 @@ module.exports = class Seeds extends Chance {
       addRecord: (item) => {
         this.records[item.type].push(item);
         return item;
+      },
+
+      retrieve(recordType) {
+        const records = this.records[recordType];
+        const hasManys = Object.keys(this.records);
+        const belongsTo = ['rootFolder', ...hasManys.map(o => o.replace(/[s]$/, ''))];
+
+        return records.map((record) => {
+          record = omit(record, belongsTo); // eslint-disable-line no-param-reassign
+          return hasManys.reduce((prev, hasMany) => {
+            if (typeof prev[hasMany] !== 'undefined') {
+              prev[hasMany] = prev[hasMany].map(o => pick(o, ['id', 'type'])); // eslint-disable-line no-param-reassign
+            }
+            return prev;
+          }, record);
+        });
       },
 
       /* ======= End Helper Methods ======= */
