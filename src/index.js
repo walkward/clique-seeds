@@ -112,7 +112,7 @@ module.exports = class Seeds extends Chance {
         return item;
       },
 
-      retrieve(recordType) {
+      serialize(recordType) {
         const records = this.records[recordType];
         const hasManys = Object.keys(this.records);
         const belongsTo = ['rootFolder', ...hasManys.map(o => o.replace(/[s]$/, ''))];

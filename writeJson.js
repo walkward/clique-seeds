@@ -10,7 +10,7 @@ try {
   seeds.init();
 
   types.forEach((type) => {
-    seeds.records[type] = seeds.retrieve(type);
+    seeds.records[type] = seeds.serialize(type);
   });
 
   fs.writeFile(

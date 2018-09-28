@@ -95,7 +95,7 @@ test('use once should only allow using a value once', (assert) => {
   assert.true(seeds.useOnce(array, 3) === 3);
 });
 
-test('we can retrieve each type', (assert) => {
+test('we can serialize each type', (assert) => {
   const seeds = new Seeds();
   const types = Object.keys(seeds.records);
   assert.plan(types.length);
@@ -103,7 +103,7 @@ test('we can retrieve each type', (assert) => {
   seeds.init();
 
   types.forEach((type) => {
-    seeds.records[type] = seeds.retrieve(type);
+    seeds.records[type] = seeds.serialize(type);
     assert.true(seeds.records[type].length > 0);
   });
 });
