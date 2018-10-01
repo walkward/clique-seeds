@@ -125,56 +125,88 @@
       "type": "projects",
       "name": "Multi-tasking hulauwamnacl fuvfifat",
       "created": "2017-11-13T20:08:24Z",
-      "modified": "2018-01-22T15:27:25Z"
+      "modified": "2018-01-22T15:27:25Z",
+      "rootFolder": {
+        "id": "8f0a8da7-066c-532a-aac7-d8f09464a7c3",
+        "type": "folders"
+      }
     },
     {
       "id": "5a8ee179-5025-5d70-8efd-32a6dc16f52d",
       "type": "projects",
       "name": "User-centric wonige",
       "created": "2017-10-09T22:35:10Z",
-      "modified": "2018-07-19T05:47:52Z"
+      "modified": "2018-07-19T05:47:52Z",
+      "rootFolder": {
+        "id": "d02d9020-7256-52e8-a7a0-8c700272a5ef",
+        "type": "folders"
+      }
     },
     {
       "id": "68e118c3-ba56-5787-bfb4-e9fcd729a672",
       "type": "projects",
       "name": "Automated borir",
       "created": "2017-01-23T12:46:09Z",
-      "modified": "2018-10-30T11:27:30Z"
+      "modified": "2018-10-30T11:27:30Z",
+      "rootFolder": {
+        "id": "832b0448-c908-5cb5-bb91-e686ae0bf2f1",
+        "type": "folders"
+      }
     },
     {
       "id": "9381231e-6612-508f-b6d2-98e010699eb0",
       "type": "projects",
       "name": "Leverage Vipe",
       "created": "2017-06-04T15:36:06Z",
-      "modified": "2018-12-04T06:01:32Z"
+      "modified": "2018-12-04T06:01:32Z",
+      "rootFolder": {
+        "id": "c4e9d143-ee20-5ad9-8ef9-a75ff908ca9e",
+        "type": "folders"
+      }
     },
     {
       "id": "a5628535-a79b-5203-8b2d-1349994fc103",
       "type": "projects",
       "name": "5th generation zaam-dox",
       "created": "2017-04-01T14:35:28Z",
-      "modified": "2018-06-01T05:10:39Z"
+      "modified": "2018-06-01T05:10:39Z",
+      "rootFolder": {
+        "id": "5db94e21-5d93-5f92-b04c-b5f548511a00",
+        "type": "folders"
+      }
     },
     {
       "id": "22b22300-b8ab-5e21-b5bf-61511a1f45b5",
       "type": "projects",
       "name": "opela",
       "created": "2017-04-01T08:01:15Z",
-      "modified": "2018-01-03T12:51:22Z"
+      "modified": "2018-01-03T12:51:22Z",
+      "rootFolder": {
+        "id": "397929cf-6113-5fb7-99ca-9b18956d0974",
+        "type": "folders"
+      }
     },
     {
       "id": "0901190b-55dd-5d7c-9e22-2d7382c01e8b",
       "type": "projects",
       "name": "Approach Database bitchip",
       "created": "2017-11-24T15:21:40Z",
-      "modified": "2018-06-04T02:13:06Z"
+      "modified": "2018-06-04T02:13:06Z",
+      "rootFolder": {
+        "id": "fc41f663-2cac-5bbe-bbd4-67ccf46b5685",
+        "type": "folders"
+      }
     },
     {
       "id": "a7e9d419-1c7f-576b-addb-858f3634afec",
       "type": "projects",
       "name": "Innovative hatity",
       "created": "2017-04-19T04:41:44Z",
-      "modified": "2018-08-18T04:25:59Z"
+      "modified": "2018-08-18T04:25:59Z",
+      "rootFolder": {
+        "id": "6a1fc091-d106-5a5e-b5c4-81e7a35c97b5",
+        "type": "folders"
+      }
     }
   ],
   "users": [

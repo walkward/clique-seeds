@@ -114,14 +114,15 @@ module.exports = class Seeds extends Chance {
 
       serialize(recordType) {
         const records = this.records[recordType];
-        const hasManys = Object.keys(this.records);
-        const belongsTo = ['rootFolder', ...hasManys.map(o => o.replace(/[s]$/, ''))];
+        const hasManys = ['rootFolder', ...Object.keys(this.records)];
+        const belongsTo = Object.keys(this.records).map(o => o.replace(/[s]$/, ''));
 
         return records.map((record) => {
           record = omit(record, belongsTo); // eslint-disable-line no-param-reassign
           return hasManys.reduce((prev, hasMany) => {
             if (typeof prev[hasMany] !== 'undefined') {
-              prev[hasMany] = prev[hasMany].map(o => pick(o, ['id', 'type'])); // eslint-disable-line no-param-reassign
+              if (prev[hasMany].id) prev[hasMany] = pick(prev[hasMany], ['id', 'type']); // eslint-disable-line no-param-reassign
+              else prev[hasMany] = prev[hasMany].map(o => pick(o, ['id', 'type'])); // eslint-disable-line no-param-reassign
             }
             return prev;
           }, record);
