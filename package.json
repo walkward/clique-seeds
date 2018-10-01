@@ -1,7 +1,7 @@
 {
   "name": "clique-seeds",
   "description": "A utility for creating seed data for both the server and client.",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "author": "Walker Ward <walker.ward1@gmail.com> ()",
   "bugs": {
     "url": "https://github.com/walkward/clique-seeds/issues",
