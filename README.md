@@ -60,25 +60,70 @@ seeds.serialize('projects')
 
 /* =========== String Generators =========== */
 seeds.title()                  // Generates a random human readable title (titles can have multiple words)
+=> 'Some title sounding string'
 seeds.companyName()            // String suitable for a company name
+=> 'Eon Lights'
 seeds.titleWord()              // Individual title word
+=> 'bytecard'
 seeds.buzzWord()               // Individual buzzword
+=> 'synergy'
 seeds.randomCount(10, 100)     // Generate a random number between 10 - 100
+=>
 
 /* =========== Numeric Generators =========== */
 seeds.smallCount(10)        // Generates a number between 0 - 10 that is more likely to be small
+=> 2
 seeds.largeCount(10)        // Opposite of seeds.smallCount()
+=> 8
 seeds.randomCount(10, 100)  // Generate a random number between 10 - 100
+=> 50
 
 /* =========== Use Once Generator =========== */
 // Use once will return a random value from an array, then mutate the array to
 // remove the value which has been returned. Thus, guaranteeing that values can only
 // be "used once." Note, you may add arrays to the seeds.data map for this purpose. However,
 // be careful to not override any of the existing data arrays.
-seeds.useOnce(['foo', 'bar'], 'baz') // returns some item from array (e.g. 'bar')
-seeds.useOnce(['foo', 'bar'], 'baz') // returns some different from array (e.g. 'foo')
-seeds.useOnce(['foo', 'bar'], 'baz') // returns default value from array (e.g. 'baz')
-seeds.useOnce(['foo', 'bar'], 'baz') // returns default value from array (e.g. 'baz')
-
+seeds.useOnce(['foo', 'bar'], 'baz') // returns some item from array
+=> 'bar'
+seeds.useOnce(['foo', 'bar'], 'baz') // returns some different from array
+=> 'foo'
+seeds.useOnce(['foo', 'bar'], 'baz') // returns default value from array
+=> 'baz'
+seeds.useOnce(['foo', 'bar'], 'baz') // returns default value from array
+=> 'baz'
 ```
 
+## Using the default chance generators
+
+All of the default chance.js generators are available using the same `seeds` that is used in the above usage. See [chance.js docs](https://chancejs.com) for all methods.
+
+```js
+/* =========== Default Chance.js Generators =========== */
+seeds.guid()
+=> 'c71f58e3-34af-43c0-b405-2764d6947d21'
+
+seeds.avatar()
+=> '//www.gravatar.com/avatar/41f84bab4a852971eb1d26a287acb763'
+
+seeds.pickset(['alpha', 'bravo', 'charlie', 'delta', 'echo'], 3);
+=> ['echo', 'alpha', 'bravo']
+seeds.first()
+=> 'Leila'
+
+seeds.coordinates();
+=> "-29.52974, 24.52815"
+
+seeds.n(seeds.email, 5);
+=> [ 'nese@me.gov',
+'tukvogi@novew.co.uk',
+'worzi@jotok.edu',
+'wicumafom@lalu.edu',
+'hifebwo@abecusa.com' ]
+
+seeds.paragraph({ sentences: 1 });
+=> 'Idefeulo foc omoemowa wahteze liv juvde puguprof epehuji upuga zige odfe igo sit pilamhul oto ukurecef.'
+```
+
+## Extension
+
+Please see the [chance.mixins](https://chancejs.com/helpers/mixin.html) documentation on extending the seeds instance to add your own custom generator functions.
