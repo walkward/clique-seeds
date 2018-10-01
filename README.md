@@ -1,4 +1,13 @@
-# clique-seeds
+- [Install](#install)
+- [Overview](#overview)
+    - [Default options](#default-options)
+- [Usage](#usage)
+    - [Basic Usage](#basic-usage)
+    - [Seeding JSON:API](#seeding-jsonapi)
+    - [Creating individual records](#creating-individual-records)
+    - [Other custom generators](#other-custom-generators)
+    - [Using default chance generators](#using-default-chance-generators)
+- [Extension](#extension)
 
 ## Install
 
@@ -6,14 +15,13 @@
 yarn add clique-seeds
 ```
 
-
 ## Overview
 
 Use the `Seeds()` constructor to instantiate a generator for creating seed data. The `Seeds` constructor takes two optional arguments:
 - instance<?number|?string>: See the [Chance.js Seed documentation](https://chancejs.com/usage/seed.html). The instance value essentially guarantees repeatable results given the same instance value and options arguments.
 - options<?object>: See default options below.
 
-##### Default options
+#### Default options
 
 Most of the following default options apply to the `init()` method which generates a graph of relational data.
 
@@ -33,11 +41,40 @@ Most of the following default options apply to the `init()` method which generat
 
 ## Usage
 
+#### Basic Usage
+
 ```js
+
 const Seeds = require('clique-seeds');
 
 // Instantiate the seeds with an instance value of 1
 const seeds = new Seeds(1);
+
+// Initialize a graph of data stored on the object this.records. Note, calling seeds.init() twice will duplicate
+// the amount of data generated. Also note, any records created prior to seeds.init() will exist within the records
+// arrays.
+seeds.init()
+
+// Now checkout seeds.records to find all the objects included in the graph which has been initialized.
+console.log(seeds.records)
+
+```
+
+#### Seeding JSON:API
+
+```js
+
+// Create graph of data
+seeds.init()
+
+// Will return objects in the shape the json-api expects for seeding the db
+seeds.serialize('projects')
+
+```
+
+#### Creating individual records
+
+```js
 
 // Creates an individual asset.
 const asset = seeds.asset();
@@ -50,13 +87,11 @@ const folder = seeds.folder({ id: '123123' });
 // seeds.init() method for generating a graph of data.
 const customers = seeds.generate(10, this.customer)
 
-// Initialize a graph of data stored on the object this.records. Note, calling seeds.init() twice will duplicate
-// the amount of data generated. Also note, any records created prior to seeds.init() will exist within the records
-// arrays.
-seeds.init()
+```
 
-// Will return objects in the shape the json-api expects for seeding the db
-seeds.serialize('projects')
+#### Other custom generators
+
+```js
 
 /* =========== String Generators =========== */
 seeds.title()                  // Generates a random human readable title (titles can have multiple words)
@@ -91,13 +126,15 @@ seeds.useOnce(['foo', 'bar'], 'baz') // returns default value from array
 => 'baz'
 seeds.useOnce(['foo', 'bar'], 'baz') // returns default value from array
 => 'baz'
+
 ```
 
-## Using the default chance generators
+#### Using default chance generators
 
 All of the default chance.js generators are available using the same `seeds` that is used in the above usage. See [chance.js docs](https://chancejs.com) for all methods.
 
 ```js
+
 /* =========== Default Chance.js Generators =========== */
 seeds.guid()
 => 'c71f58e3-34af-43c0-b405-2764d6947d21'
@@ -122,6 +159,7 @@ seeds.n(seeds.email, 5);
 
 seeds.paragraph({ sentences: 1 });
 => 'Idefeulo foc omoemowa wahteze liv juvde puguprof epehuji upuga zige odfe igo sit pilamhul oto ukurecef.'
+
 ```
 
 ## Extension
