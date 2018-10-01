@@ -37,6 +37,7 @@ module.exports = class Seeds extends Chance {
       maxProjects: 10,
       maxFolders: 10,
       maxCollections: 10,
+      quiet: true,
     }, options);
 
     this.state = {
@@ -328,11 +329,13 @@ module.exports = class Seeds extends Chance {
           });
 
           /* eslint-disable */
-          console.log(stripIndents`
-            Generated Seed Data:
-            ----------------------
-            ${Object.entries(this.records).reduce((prev, [key, value]) => prev += `${key}: ${value.length}\n`, '')}
-          `);
+          if (this.options.quiet === false) {
+            console.log(stripIndents`
+              Generated Seed Data:
+              ----------------------
+              ${Object.entries(this.records).reduce((prev, [key, value]) => prev += `${key}: ${value.length}\n`, '')}
+            `);
+          }
           /* eslint-enable */
         }
       },
