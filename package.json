@@ -55,6 +55,7 @@
     "lint": "eslint src/**",
     "test": "yarn run lint && yarn run test-coverage",
     "test:dev": "NODE_ENV=test ava --watch",
-    "test-coverage": "cross-env NODE_ENV=test nyc ava"
+    "test-coverage": "cross-env NODE_ENV=test nyc ava",
+    "generate": "node generate.js"
   }
 }

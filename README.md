@@ -8,6 +8,7 @@
     - [Other custom generators](#other-custom-generators)
     - [Using default chance generators](#using-default-chance-generators)
 - [Extension](#extension)
+- [Generate JSON File](#generate-json-file)
 
 ## Install
 
@@ -165,3 +166,7 @@ seeds.paragraph({ sentences: 1 });
 ## Extension
 
 Please see the [chance.mixins](https://chancejs.com/helpers/mixin.html) documentation on extending the seeds instance to add your own custom generator functions.
+
+## Generate JSON File
+
+`yarn run generate` - Generates serialized data written to seeds.json file in base directory.
